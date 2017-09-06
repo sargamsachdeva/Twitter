@@ -1,4 +1,4 @@
-<g:form controller="tweet" action="likeTweet" method="POST">
+
     <g:hiddenField name="id" value="${message?.id}"/>
     <div class="form-group row">
     <div class="message">
@@ -7,7 +7,7 @@
         "${message.message}"
     </span>
     <div class="date">at <g:formatDate date="${message.dateCreated}"/></div>
-    <input type="submit" class="text-button" value="Like"/>
+        <g:remoteLink action="likeTweet" id="${message?.id}"><button>Like</button></g:remoteLink>
+
     </div>
     </div>
-</g:form>
