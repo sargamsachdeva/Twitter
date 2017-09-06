@@ -1,6 +1,6 @@
 <html>
 <head>
-    <meta name="layout" content="main" />
+    <meta name="layout" content="main"/>
     <title>User Tweets</title>
 </head>
 <body>
@@ -12,8 +12,9 @@
         Add Tweets
     </div>
 
-    <div class="panel-body ">
-        <g:form name="updateTweetForm" id="updateTweetForm" class="form-horizontal" update="messageLists" controller="tweet" action="updateTweets">
+    <div class="panel-body">
+        <g:formRemote name="updateTweetForm" id="updateTweetForm" class="form-horizontal" url="[action:'updateTweets']"
+        update="messages">
             <div class="form-group row">
                 <label for="message" class="col-sm-4 form-control-label">Your Tweet</label>
 
@@ -26,9 +27,19 @@
                     <g:submitButton name="submit" value="Update" type="submit"
                                     class="btn btn-primary btn-block"/>
                 </div>
-        </g:form>
+        </g:formRemote>
             </div>
     </div>
+
+<div class="panel panel-default panel-primary panelTweets">
+    <div class="panel-heading">
+        My Tweets
+    </div>
+
+    <div class="panel-body" id="messages"">
+    <g:render template="messages" collection="${messages}" var="message" model="likes:${likes}"/>
+</div>
+</div>
 </body>
 </html>
 

@@ -4,8 +4,13 @@ class Tweet {
 
     User user
     String message
+    Boolean likes
     Date dateCreated
 
     static constraints = {
+    }
+
+    static mapping = {
+        likes defaultValue:false
     }
 }
