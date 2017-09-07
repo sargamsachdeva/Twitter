@@ -4,6 +4,7 @@
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.rxlogix.twitter.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.rxlogix.twitter.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.rxlogix.twitter.Role'
+grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],

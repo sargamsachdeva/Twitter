@@ -6,6 +6,8 @@ import grails.plugin.springsecurity.annotation.Secured
 class UserController {
 
     def tweetService
+    def springSecurityService
+    def userService
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -16,13 +18,12 @@ class UserController {
         [user: user, messages: Tweet.findAllByUser(user, [max: 10, sort: "dateCreated", order: "desc" ] )]
     }
 
-    def unfriend(String user) {
-        tweetService.unfriend(user)
+    def makeFriend() {
+
+        def user = User.get(params.id)
+        userService.makeFriend(user)
+        flash.message = "Friend list updated!!"
         redirect action: 'index'
     }
 
-    def makeFriend(String user) {
-        tweetService.makeFriend user
-        redirect action: 'index'
-    }
 }

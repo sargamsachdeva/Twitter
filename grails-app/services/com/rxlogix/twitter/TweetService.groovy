@@ -8,19 +8,15 @@ class TweetService {
 
     def springSecurityService
 
-    void unfriend(String username) {
-        def user = User.findByUsername(username)
-        if (user) {
-            def currentUser = springSecurityService.currentUser
-            currentUser.removeFromFollowers(user)
-        }
+    void makeFriend(User user) {
+        /*def user1 = User.find(user)
+        println("user in service: "+user)
+        if (user1) {
+        */
+        println("user in service: "+user)
+        def currentUser = springSecurityService.currentUser
+            currentUser.addToFollowers(user)
+        //}
     }
 
-    void makeFriend(String username) {
-        def user = User.findByUsername(username)
-        if (user) {
-            def currentUser = springSecurityService.currentUser
-            currentUser.addToFollowers(user)
-        }
-    }
 }

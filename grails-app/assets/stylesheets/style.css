@@ -11,3 +11,14 @@
     font-size:50px;
     color:#761c19;
 }
+
+.flash{
+    background-color: #d58512;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 400px;
+    margin-left: 400px;
+    margin-top: 50px;
+}

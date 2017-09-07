@@ -11,7 +11,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a href="${createLink(uri: '/tweet/index')}">HOME</a></li>
-            <li><g:link controller="person">Users</g:link></li>
+            <li><a href="${createLink(uri: '/tweet/profile')}">PROFILE</a></li>
             <li><g:link controller='logout'>Logout</g:link></li>
         </ul>
     </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group row">
             <h1>Following </h1>
-            <g:if test="${!user.followers}">none</g:if>
+            <g:if test="${!user.followers}">No friends Yet..</g:if>
             <f:table collection="${user.followers}" properties="['username']"/>
 
         </div>
