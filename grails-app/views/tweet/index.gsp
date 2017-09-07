@@ -36,7 +36,7 @@
         My Tweets
     </div>
 
-    <div class="panel-body" id="messages"">
+    <div class="panel-body" id="messages">
     <g:render template="messages" collection="${messages}" var="message" model="likes:${likes}"/>
 </div>
 </div>
