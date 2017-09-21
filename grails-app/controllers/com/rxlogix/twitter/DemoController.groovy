@@ -4,9 +4,11 @@ import grails.plugin.springsecurity.annotation.Secured
 
 class DemoController {
 
+    def rxMailNotificationService
+
     @Secured('ROLE_USER')
     def index() {
-
-        render "hello from demo index()"
+        rxMailNotificationService.sendMail(["sargam.sachdeva@rxlogix.com"], "test", "Hello Rxlogix World!!")
+        render "Success"
     }
 }

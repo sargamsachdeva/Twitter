@@ -9,6 +9,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#">TWITTER</a>
         </div>
+
         <ul class="nav navbar-nav">
             <li><a href="${createLink(uri: '/tweet/index')}">HOME</a></li>
             <li><a href="${createLink(uri: '/tweet/profile')}">PROFILE</a></li>

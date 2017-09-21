@@ -1,5 +1,6 @@
 package com.rxlogix.twitter
 
+import co.UserCO
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured('ROLE_USER')
@@ -26,4 +27,16 @@ class UserController {
         redirect action: 'index'
     }
 
+    def register(UserCO command) {
+        log.debug "params for register action :"+params
+        if (!command.validate())
+        {
+            command.errors.allErrors.each{ log.debug "error while saving User :"+it }
+            render template:"/user/userSaveError",model: [command:command]
+            return
+        }
+        else{
+            //save user data
+        }
+    }
 }

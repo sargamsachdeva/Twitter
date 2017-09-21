@@ -9,8 +9,4 @@ class Tweet {
 
     static constraints = {
     }
-
-    static mapping = {
-        likes defaultValue:false
-    }
 }

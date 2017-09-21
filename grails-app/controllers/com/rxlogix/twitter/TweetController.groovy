@@ -16,8 +16,8 @@ class TweetController {
 
         def tweet = new Tweet(message: params.message)
         tweet.user = User.get(springSecurityService.principal.id)
-       // tweet.likes=0
-        tweet.save(flush:true)
+        tweet.likes=false
+        tweet.save(flush:true,failOnError:true)
         def messages=userTweets()
         render(template:'messages', collection: messages,var:'message')
     }
